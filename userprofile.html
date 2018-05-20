@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en"  />
+<head>
+<title> UserDetails </title>
+ 
+ <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <!--  <link rel="stylesheet" href="css/background.css" />-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/fun.min.js"></script>
+	<!--<script src="https://use.fontawesome.com/3e68744ce3.js"></script> -->
+</head>
+<body onload="userData()">
+<div class="regheading" >
+<h2 class= "heading">Demo Application </h2>
+</div>
+<div class="userinfoheading">
+<a href="index.html" class="home">Home</a>
+<div class="userinfoheading1">
+<span style = "font-weight:bold;"id="printusername"></span>
+<a href="logout.html"class="logout" id="logginginfo" onclick="logout()">LOGOUT</a></div>
+</div>
+<br/>
+<div class="container">
+ 
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Profile</a></li>
+    <li><a data-toggle="tab" href="#menu1" onclick="edu(this)">Education </a></li>
+    <li><a data-toggle="tab" href="#menu2">ChangePassword</a></li>
+     
+  </ul>
+
+  <div class="tab-content"  >
+    <div id="home" class="tab-pane fade in active">
+	<br/>
+	<div class="formheading">
+<p class="formheadings text-uppercase"> General Information</p>
+ </div>
+	<div class = "row">
+	<div class="col-md-2">
+	<p class="inputfldsheading0">FirstName:</p> <br /> <br/>  
+	<p class="inputfldsheading">LastName:</p> <br /><br/>  
+	<p class="inputfldsheading1">MiddleName:</p> <br /><br/> 
+	<p class="inputfldsheading2">NickName:</p> <br /><br/> 
+	<p class="inputfldsheading0">MobileNumber:</p> <br /> <br/>  
+	<p class="inputfldsheading">Birthdate:</p> <br /><br/>  
+	<p class="inputfldsheading1">Gender:</p> <br /><br/> 
+	 
+	</div>
+	<div class="col-md-3">
+		<input type="text" class="form-control logininputfield" id="b0"/> <br />
+		<input type="text" class="form-control logininputfield" value="" name="" id="b1" placeholder="LastName"/> <br />
+		<input type="text" class="form-control logininputfield" value="" name="" id="b2" placeholder="MiddleName"/> <br />
+		<input type="text" class="form-control logininputfield" value="" name="" id="b3" placeholder="NickName"/> <br />
+		<input type="text" class="form-control logininputfield" value="" name="" id="b4" placeholder="MobileNumber"/> <br />
+		<input type="text" class="form-control logininputfield" value="" name="" id="b5" placeholder="DD/MM/YYYY"/> <br />
+		<div class="radio"><label><input type="radio" name="radio" id="male" value=""/> Male</label>
+		<label><input type="radio"  name="radio" id="female" value=""/> Female</label> </div>
+	
+	</div>
+	</div>
+	<div class="formheading">
+<p class="formheadings text-uppercase"> Address Information</p>
+ </div>
+ <div class="row">
+	<div class="col-md-2">
+	<p class="inputfldsheading0">Address:</p> <br /> <br/>  
+	<p class="inputfldsheading1">Address1:</p> <br /><br/> 
+	<p class="inputfldsheading">CityTown:</p> <br /><br/> 
+	</div>
+	<div class="col-md-3">
+		<input type="text" class="form-control logininputfield" value="" name="" id="b6" placeholder="Address"/> <br />
+		<input type="text" class="form-control logininputfield" value="" name="" id="b7" placeholder="Address1"/> <br />
+		<input type="text" class="form-control logininputfield" value="" name="" id="b8" placeholder="CityTown"/> <br />
+		 
+	</div>
+	
+	<div class="col-md-offset-1 col-md-2">
+	<p class="inputfldsheading0">Contry:</p> <br /> <br/>  
+	<p class="inputfldsheading">State:</p> <br /><br/>  
+	<p class="inputfldsheading1">zipcode:</p> <br /><br/> 
+	</div>
+	<div class="col-md-3">
+		<input type="text" class="form-control logininputfield" value="" name="" id="b9" placeholder="Country"/> <br />
+		<input type="text" class="form-control logininputfield" value="" name="" id="b10" placeholder="State"/> <br />
+		<input type="text" class="form-control logininputfield" value="" name="" id="b11" placeholder="Zipcode"/> <br />
+		
+	</div>
+ 
+ </div>
+ <center> <button class="btn btn-info" id="update" type="button" onclick="update()">UPDATE</button>
+ 
+ 
+ 
+</div>
+
+
+
+    <div id="menu1" class="tab-pane fade">
+	<br />
+	<table class=" table table-bordered" id="table">
+		<tr>
+		<td id="sh">SCHOOL NAME</td>
+		<td id="deg">Degree</td>
+		<td id="sa">Study Area </td>
+		<td id="cd">Completion Date</td>
+		<td id="func"style="width: 350px;"><button class="btn btn-primary addbtn" data-toggle="collapse" data-target="#demo"  id="toggle"> Input Data</button>
+			<div id="demo" class="collapse addedudtls">
+			<br />
+				<input type="text" class="form-control" id="d0"  placeholder=" school"  autofocus />
+				<input type="text" class="form-control" id="d1" placeholder="Degree "  />
+				<input type="text" class="form-control" id="d2" placeholder=" Study" />
+				<input type="text" class="form-control" id="d3" placeholder="Date "  />
+				<a href="#" id="hide" onclick="addDetails()" class="btn btn-info userdata" data-toggle="collapse" data-target="#demo">ADD  </a>
+
+			</div>
+		</td>
+    		
+	</table>
+    <p id="demo"></p>
+    </div>
+	
+	<div id="menu2" class="tab-pane fade">
+	<br />
+	<div class="row" >
+	<div class="col-md-2">
+	<p class="inputfldsheading0">Email:</p> <br /> <br/>  
+	<p class="inputfldsheading">Password:</p> <br /><br/> 
+	<p class="inputfldsheading">Confirm Password:</p> <br /><br/> 
+	</div>
+	<div class="col-md-3">
+		<input type="text" class="form-control logininputfield" value="" name="" id="p1" placeholder="Email"/> <br />
+		<input type="password" class="form-control logininputfield" value="" name="" id="p2" placeholder="Password"/> <br />
+		<input type="password" class="form-control logininputfield" value="" name="" id="p3" placeholder="Confirm Password"/> <br />
+		 <button class="btn btn-primary" id="" onclick="">UPDATE</button>
+	</div>
+     </div>
+	 
+     </div>
+    
+  </div>
+</div>
+<script>
+function userData()
+    {
+var email=sessionStorage.getItem("user"); 
+document.getElementById("b0").value=JSON.parse(localStorage.getItem(''+email)).fvalue;
+document.getElementById("b1").value=JSON.parse(localStorage.getItem(''+email)).lvalue;
+document.getElementById("b2").value=JSON.parse(localStorage.getItem(''+email)).mvalue;
+document.getElementById("b3").value=JSON.parse(localStorage.getItem(''+email)).nvalue;
+document.getElementById("b4").value=JSON.parse(localStorage.getItem(''+email)).mbvalue;
+document.getElementById("b5").value=JSON.parse(localStorage.getItem(''+email)).bdvalue;
+document.getElementById("b6").value=JSON.parse(localStorage.getItem(''+email)).advalue;
+document.getElementById("b7").value=JSON.parse(localStorage.getItem(''+email)).ad1value;
+document.getElementById("b8").value=JSON.parse(localStorage.getItem(''+email)).ctvalue;
+document.getElementById("b9").value=JSON.parse(localStorage.getItem(''+email)).cnvalue;
+document.getElementById("b10").value=JSON.parse(localStorage.getItem(''+email)).stvalue;
+document.getElementById("b11").value=JSON.parse(localStorage.getItem(''+email)).zpvalue;    
+    }
+function update()
+    {
+        var obj={};
+        obj = JSON.parse(localStorage.getItem(''+email));
+        obj.fvalue=document.getElementById("b0").value;
+        obj.lvalue=document.getElementById("b1").value;
+        obj.mvalue=document.getElementById("b2").value;
+        obj.nvalue=document.getElementById("b3").value;
+        obj.mbvalue=document.getElementById("b4").value;
+        obj.bdvalue=document.getElementById("b5").value;
+        obj.advalue=document.getElementById("b6").value;
+        obj.ad1value=document.getElementById("b7").value;
+        obj.ctvalue=document.getElementById("b8").value;
+        obj.cnvalue=document.getElementById("b9").value;
+        obj.stvalue=document.getElementById("b10").value;
+        obj.zpvalue=document.getElementById("b11").value;
+        
+if(typeof(Storage) !== "undefined")
+{        
+localStorage.setItem(''+email,JSON.stringify(obj));
+}
+else
+    {
+    document.getElemenyById("reg").innerHTML="Sorry, your browser does not support the webpage.."
+    }
+    }
+function addDetails()
+    {
+        var school,degree,study,date,m,j;
+        var ar1=Array();
+        var email=sessionStorage.getItem('user');
+        var ar=email;
+        ar1=JSON.parse(localStorage.getItem('1'+email));
+        var i=ar1.length;
+        var res = ar.substr(0, 3);
+        var real=res.concat('ed'+i);
+        var name='ar';
+        var actual=name.concat(real);
+        ar1.push(real);
+        localStorage.setItem('1'+email,JSON.stringify(ar1));
+        actual=new Array();
+        school=document.getElementById("d0").value;
+        degree=document.getElementById("d1").value;
+        study=document.getElementById("d2").value;
+        date=document.getElementById("d3").value;
+        localStorage.setItem(''+real,JSON.stringify(actual));
+        actual=JSON.parse(localStorage.getItem(''+real));
+        actual.push(school);
+        actual.push(degree);
+        actual.push(study);
+        actual.push(date);
+        localStorage.setItem(''+real,JSON.stringify(actual));
+   
+        var table=document.getElementById('table');
+        var table_len=(table.rows.length);
+        var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='sh"+table_len+"'>"+actual[0]+"</td><td id='deg"+table_len+"'>"+actual[1]+"</td><td id='sa"+table_len+"'>"+actual[2]+"</td><td id='cd"+table_len+"'>"+actual[3]+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='btn btn-warning' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+"' value='Save' class='btn btn btn-success' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='btn btn-danger' onclick='delete_row("+table_len+")'></td></tr>";
+            
+    }
+
+function edu(btn)
+    {
+    btn.onclick=function(){
+    };
+     var email=sessionStorage.getItem('user');
+     var rs;
+     var arr=JSON.parse(localStorage.getItem('1'+email));
+    
+    var table = document.getElementById("table");
+    for(rs=0;rs<arr.length;rs++)
+        {
+     var l=JSON.parse(localStorage.getItem(''+arr[rs]));
+     var table_len=(table.rows.length);
+     var row = table.insertRow(table_len).outerHTML = "<tr id='row"+table_len+"'><td id='sh"+table_len+"'>"+l[0]+"</td><td id='deg"+table_len+"'>"+l[1]+"</td><td id='sa"+table_len+"'>"+l[2]+"</td><td id='cd"+table_len+"'>"+l[3]+"</td><center><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='btn btn-warning' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+"' value='Save' class='btn btn btn-success' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='btn btn-danger' onclick='delete_row("+table_len+")'></td></center></tr>";
+}
+    }
+  function edit_row(no)
+{
+  var ar1=[];
+  var email=sessionStorage.getItem('user');
+  var ar=email.substr(0,3);
+  var num=no-1;
+  var real=ar.concat('ed'+num);
+  ar1=JSON.parse(localStorage.getItem(''+real));
+  document.getElementById("sh"+no).innerHTML="<input type='text' class='form-control'id='school_text"+no+"' value='"+ar1[0]+"'>";
+  document.getElementById("deg"+no).innerHTML="<input type='text' class='form-control' id='degree_text"+no+"' value='"+ar1[1]+"'>";
+  document.getElementById("sa"+no).innerHTML="<input type='text' class='form-control' id='study_text"+no+"' value='"+ar1[2]+"'>";
+  document.getElementById("cd"+no).innerHTML="<input type='text' class='form-control' id='complete_text"+no+"' value='"+ar1[3]+"'>";
+
+}
+function save_row(no)
+{
+ var school,degree,study,complete;
+ var edit= new Array ();
+ school= document.getElementById('school_text'+no).value;
+ degree= document.getElementById('degree_text'+no).value;
+ study=  document.getElementById('study_text'+no).value;
+ complete= document.getElementById('complete_text'+no).value;
+  var email=sessionStorage.getItem('user');
+  var ar=email.substr(0,3);
+  var num=no-1;
+  var real=ar.concat('ed'+num);
+  edit=JSON.parse(localStorage.getItem(''+real));
+  edit[0]=school;  
+  edit[1]=degree;
+  edit[2]=study;
+  edit[3]=complete;
+  localStorage.setItem(''+real,JSON.stringify(edit));
+  var save=new Array();
+  save=JSON.parse(localStorage.getItem(''+real));
+  document.getElementById("sh"+no).innerHTML=save[0];
+  document.getElementById("deg"+no).innerHTML=save[1];
+  document.getElementById("sa"+no).innerHTML=save[2];
+  document.getElementById("cd"+no).innerHTML=save[3];
+} 
+
+function delete_row(no)
+{
+ var real;
+ var email=sessionStorage.getItem('user');
+ var ar=email.substr(0,3);
+ var num=no-1;
+ real=ar.concat('ed'+num);
+ var del1=JSON.parse(localStorage.getItem(''+real));
+ del1=[];
+ localStorage.setItem(''+real,JSON.stringify(del1));
+ var del=JSON.parse(localStorage.getItem('1'+email));
+ var index=del.indexOf(real);
+ alert(index);
+ if(index => 0)
+     {
+         del.splice(index,1);
+     }
+ localStorage.setItem('1'+email,JSON.stringify(del));  
+  document.getElementById("row"+no+"").outerHTML="";
+ }
+function updatepassword()
+    {
+        var r= sessionStorage.getItem("user");
+        alert(r);
+        var email,pass,con;
+        var gemail;
+        email=document.getElementById("p1").value;
+        pass=document.getElementById("p2").value;
+        con=document.getElementById("p3").value;
+        gemail=JSON.parse(localStorage.getItem(''+r)).emvalue;
+        if(email === gemail)
+            {
+       var obj = {};
+       obj=JSON.parse(localStorage.getItem(''+r));         
+       obj.pvalue=pass;
+       obj.cpvaue=con;
+       localStorage.setItem(''+email, JSON.stringify(obj));
+       alert("Password was changed successfully");
+
+            }
+        else
+            {
+                alert("Passwords do not match!");
+            }
+    }
+function logout()
+    {
+        sessionStorage.clear();
+        window.loction.href="logout.html"
+    }
+</script>
+
+</body>
+
+</html>
